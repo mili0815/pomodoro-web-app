@@ -2,7 +2,7 @@
 
 GitHub Pages deployment target:
 
-`https://forrest000.github.io/andrej-0000/`
+`https://mili0815.github.io/pomodoro-web-app/`
 
 ## Local run
 
@@ -16,10 +16,10 @@ Open:
 
 ## Deploy
 
-1. Upload this project to the GitHub repository `forrest000/andrej-0000`.
+1. Upload this project to the GitHub repository `mili0815/pomodoro-web-app`.
 2. Push to the `main` branch.
 3. In GitHub repository settings, open `Settings > Pages`.
 4. Ensure GitHub Pages is enabled for `GitHub Actions`.
 5. After the workflow completes, open:
 
-`https://forrest000.github.io/andrej-0000/`
+`https://mili0815.github.io/pomodoro-web-app/`
