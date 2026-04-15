@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="hero card">
+      <div class="hero-copy">
+        <p class="eyebrow">FOCUS DASHBOARD</p>
+        <h1>Pomodoro</h1>
+        <p class="hero-text">
+          공부와 휴식을 리듬 있게 관리하는 개인 집중 타이머입니다.
+          오늘의 목표, 진행률, 할 일을 한 화면에서 정리합니다.
+        </p>
+      </div>
+
+      <div class="hero-side">
+        <div class="focus-badge">
+          <span>오늘 목표</span>
+          <strong id="focusTarget">4회 집중</strong>
+          <div class="goal-edit-row">
+            <input type="text" id="focusTargetInput" placeholder="예: 6회 집중" maxlength="20" />
+            <button id="saveFocusTargetBtn" type="button" class="ghost-btn small-btn">저장</button>
+          </div>
+        </div>
+        <button id="themeToggle" class="theme-btn" type="button">야간 모드</button>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="card timer-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">TIMER</p>
+            <h2>집중 세션</h2>
+          </div>
+          <span id="sessionLabel" class="session-label study">공부 시간</span>
+        </div>
+
+        <div class="timer-ring">
+          <div class="timer-ring-inner">
+            <p class="timer-caption">남은 시간</p>
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <p id="timerHint" class="timer-hint">한 번에 한 가지 작업만 처리하세요.</p>
+          </div>
+        </div>
+
+        <div class="progress-meta">
+          <span>세션 진행률</span>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-container">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <div class="setting-row">
+          <label class="input-group">
+            <span>공부 시간</span>
+            <div class="input-wrap">
+              <input type="number" id="studyMinutes" min="1" max="180" value="25" />
+              <em>min</em>
+            </div>
+          </label>
+
+          <label class="input-group">
+            <span>휴식 시간</span>
+            <div class="input-wrap">
+              <input type="number" id="breakMinutes" min="1" max="60" value="5" />
+              <em>min</em>
+            </div>
+          </label>
+        </div>
+
+        <div class="btn-row">
+          <button id="startBtn" type="button">시작</button>
+          <button id="pauseBtn" type="button" class="ghost-btn">일시정지</button>
+          <button id="resetBtn" type="button" class="ghost-btn">초기화</button>
+        </div>
+      </section>
+
+      <section class="card side-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">SUMMARY</p>
+            <h2>오늘의 흐름</h2>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-box accent">
+            <span class="stat-title">오늘 완료</span>
+            <strong id="todayPomodoros">0회</strong>
+          </article>
+          <article class="stat-box">
+            <span class="stat-title">총 누적</span>
+            <strong id="totalPomodoros">0회</strong>
+          </article>
+          <article class="stat-box">
+            <span class="stat-title">오늘 공부 시간</span>
+            <strong id="todayStudyTime">0분</strong>
+          </article>
+          <article class="stat-box">
+            <span class="stat-title">총 공부 시간</span>
+            <strong id="totalStudyTime">0분</strong>
+          </article>
+        </div>
+
+        <div class="quote-box">
+          <p class="quote-label">FOCUS NOTE</p>
+          <p id="focusMessage" class="quote-text">지금 25분의 집중이 오늘 하루의 밀도를 바꿉니다.</p>
+        </div>
+      </section>
+
+      <section class="card todo-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">TASKS</p>
+            <h2>오늘 할 일</h2>
+          </div>
+        </div>
+
+        <div class="todo-input-row">
+          <input type="text" id="todoInput" placeholder="예: 운영체제 과제 마무리" />
+          <button id="addTodoBtn" type="button">추가</button>
+        </div>
+
+        <div class="todo-action-row">
+          <button id="clearCompletedBtn" type="button" class="ghost-btn small-btn">완료 항목 삭제</button>
+          <button id="clearAllBtn" type="button" class="danger-btn small-btn">전체 삭제</button>
+        </div>
+
+        <ul id="todoList" class="todo-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

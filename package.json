@@ -1,0 +1,9 @@
+{
+  "name": "pomodoro-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static pomodoro dashboard with a tiny local server.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
